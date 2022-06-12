@@ -1,31 +1,101 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
+
+
   <body>
     <div id="content">
-      <h1>Welcome to my portfolio!</h1>
-
-      <img src ="Images/MS_HS.jpg" />
-
-      <p>Hello! My name is Max Sehaumpai. I started my undergraduate career at CUNY City College 
-            in New York as a math major before adding CS at the end of my sophomore year. 
-           I love seeing how math and computer science can be used to study other science fields! 
-      </p>
       
-      <p>I look forward to working with everyone and learning new things this summer! :D </p>
+      <img src ="Images/MS_HS.jpg" ALIGN = "right" HSPACE = "15" WIDTH = "120" HEIGHT = auto/>
+      <h2>Max Sehaumpai</h2>
+      <p >
+          Hello! Welcome to my Google SPS 2022 portfolio. My name is Max. ~ I am an applied math & computer science major at CUNY City College
+          in New York. I enjoy exploring how math and computer science can be used to study and advance
+          other science fields.
+      </p>
 
       <p>
-          My <a href="https://www.linkedin.com/in/max-sehaumpai-0a99b3141/">LinkedIn</a> :)
+        I am currently an undergraduate researcher at my college's 
+        <a href="https://www.ccny.cuny.edu/eas">Department of Earth & Atmospheric Science</a> and a research 
+        (developer) intern at <a href="https://rhg.com/">Rhodium Group</a>.
+      </p>
+
+      <p>I look forward to working with everyone and learning new things this summer! </p>
+
+      <p><b>Contact :) </b></p>
+      <p ALIGN = "center">
+          <a href = msehaumpai@gmail.com>[Email]</a> &nbsp &nbsp &nbsp
+          <a href="https://www.linkedin.com/in/max-sehaumpai-0a99b3141/">[LinkedIn]</a>  &nbsp &nbsp &nbsp
+          <a href="https://github.com/msworld1">[GitHub]</a>  
       </p>
       
-      <p>Please click here to get a random message :</p>
+      <hr>
+        <h3>Projects</h3>
+        <div class = "project1"> 
+            <img src ="Images/weather.png" ALIGN = "left" HSPACE = "30" WIDTH = "145" HEIGHT = auto/>
+            
+            <p >
+                <b>Serial Clustering of Extratropical Cyclones - An Overview</b> <br> <br>
+                Used statistics and unsupervised learning to study the clustering of extratopical cyclones on the US
+                east coast. Analyzed multi-dimensional data in Python.
+                <a href = "https://www.dropbox.com/s/udrpzjz3a11huh2/MS_ORCA_poster_v2_submit.pdf?dl=0">[Poster]</a>
+            </p>
+            <p>Advisor : Prof. James F. Booth</p>
+            <br>
+        </div>
+        
+        <div class = "project2"> 
+            <img src ="Images/coo.png" ALIGN = "left" HSPACE = "30" WIDTH = "145" HEIGHT = auto/>
+            <p >
+                <b>Credibility Detection of Online Reviews</b> <br> <br>
+                Data science term project with a natural language processing theme. Used statistics and 
+                machine learning to detect fake online reviews. 
+                <a href = "https://drive.google.com/file/d/1rOpuynns9hyMAy_TOnJWqk_jyFba7R5N/view?usp=sharing">[Writeup]</a>
+                <a href="https://github.com/yqian000/OnlineReviewDetection">[Slides]</a>  
+                <a href="https://drive.google.com/file/d/1UoQgzS9XEv7ByoPny_bdsxmMS5FpbsPd/view?usp=sharing">[Code/Models]</a> 
+            </p>
+            <p>Joint work with Yue (Kathy) Qian and Chuantian Lin</p>
+            <br>
+        </div>
+        
+        <div class = "project3"> 
+            <img src ="Images/math1.PNG" ALIGN = "left" HSPACE = "30" WIDTH = "145" HEIGHT = auto/>
+            
+            <p >
+                <b>Average Size of Randomly-Generated Dominating Sets</b> <br> <br>
+                An experimental approach to studying randomly-generated dominating sets using numerical simulations,
+                probability, Markov chain, and number theory. <a href="https://drive.google.com/file/d/1iP3ML4TP8Myl3iI6KhK1hXEdVAVibsc9/view?usp=sharing">[Slides]</a>
+            </p>
+            <p>Advisor : Michael Wijaya, Ph.D.</p>
+            <br>
+        </div>
+
+      <hr> 
+
+      <p>Something random about me :</p>
       <button onclick="addRandomGreeting()">Random</button>
       <div id="greeting-container"></div>
+
+<!--
+      <p>Please click here to get date :</p>
+      <button onclick="showServerTime()">Random</button>
+      <div id="datetime"></div>
+-->
+
+      <form method="POST">
+        <p>Enter some text here:</p>
+        <textarea name="text-input">hello world</textarea>
+        <br/>
+        <input type="submit" />
+      </form>
+      
+      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
     </div>
   </body>
 </html>
