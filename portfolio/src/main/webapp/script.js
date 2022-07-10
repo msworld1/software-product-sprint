@@ -17,7 +17,11 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['I never thought about majoring in CS until my 2nd year of college.', 
+      'I love learning about weather & climate.', 
+      'Japanese foods are my favorite, tempura shrimp bento :D', 
+      'Relax :)',
+      'I hope to go to graduate school.'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -26,3 +30,38 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+async function showServerTime() {
+    const responseFromServer = await fetch('/date');
+    const textFromResponse = await responseFromServer.text();
+  
+    const dateContainer = document.getElementById('date-container');
+    dateContainer.innerText = textFromResponse;
+  }
+
+  google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+/** Fetches color data and uses it to create a chart. */
+function drawChart() {
+  fetch('/color-data').then(response => response.json())
+  .then((colorVotes) => {
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', 'Color');
+    data.addColumn('number', 'Votes');
+    Object.keys(colorVotes).forEach((color) => {
+      data.addRow([color, colorVotes[color]]);
+    });
+
+    const options = {
+      'title': 'Favorite Colors',
+      'width':600,
+      'height':500
+    };
+
+    const chart = new google.visualization.ColumnChart(
+        document.getElementById('chart-container'));
+    chart.draw(data, options);
+  });
+}
+
