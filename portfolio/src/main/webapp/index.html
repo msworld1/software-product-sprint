@@ -1,19 +1,155 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+    
+          // Load the Visualization API and the corechart package.
+          google.charts.load('current', {'packages':['corechart']});
+    
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.charts.setOnLoadCallback(drawChart);
+    
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+          function drawChart() {
+    
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Mushrooms', 3],
+              ['Onions', 1],
+              ['Olives', 1],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);
+    
+            // Set chart options
+            var options = {'title':'How Much Pizza I Ate Last Night',
+                           'width':300,
+                           'height':200};
+    
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+          }
+        </script>
   </head>
+
+
   <body>
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
+      
+      <img src ="Images/MS_HS.jpg" ALIGN = "right" HSPACE = "15" WIDTH = "120" HEIGHT = auto/>
+      <h2>Max Sehaumpai</h2>
+      <p >
+          Hello! Welcome to my Google SPS 2022 portfolio. My name is Max. ~ I am an applied math & computer science major at CUNY City College
+          in New York. I enjoy exploring how math and computer science can be used to study and advance
+          other science fields.
+      </p>
+
+      <p>
+        I am currently an undergraduate researcher at my college's 
+        <a href="https://www.ccny.cuny.edu/eas">Department of Earth & Atmospheric Science</a> and a research 
+        (developer) intern at <a href="https://rhg.com/">Rhodium Group</a>.
+      </p>
+
+      <p>I look forward to working with everyone and learning new things this summer! </p>
+
+      <p><b>Contact :)</b> </p>
+      <p ALIGN = "center">
+          <a href = msehaumpai@gmail.com>[Email]</a> &nbsp &nbsp &nbsp
+          <a href="https://www.linkedin.com/in/max-sehaumpai-0a99b3141/">[LinkedIn]</a>  &nbsp &nbsp &nbsp
+          <a href="https://github.com/msworld1">[GitHub]</a>  
+      </p>
+
+      <hr>
+        <h3>Research & Projects</h3>
+        <div class = "project1"> 
+            <img src ="Images/weather.png" ALIGN = "left" HSPACE = "30" WIDTH = "145" HEIGHT = auto/>
+            
+            <p >
+                <b>Serial Clustering of Extratropical Cyclones - An Overview</b> <br> <br>
+                Used statistics and unsupervised learning to study the clustering of extratopical cyclones on the US
+                east coast. Analyzed multi-dimensional data in Python.
+                <a href = "https://www.dropbox.com/s/udrpzjz3a11huh2/MS_ORCA_poster_v2_submit.pdf?dl=0">[Poster]</a>
+            </p>
+            <p>Advisor : Prof. James F. Booth</p>
+            <br>
+        </div>
+        
+        <div class = "project2"> 
+            <img src ="Images/coo.png" ALIGN = "left" HSPACE = "30" WIDTH = "145" HEIGHT = auto/>
+            <p >
+                <b>Credibility Detection of Online Reviews</b> <br> <br>
+                Data science term project with a natural language processing theme. Used statistics and 
+                machine learning to detect fake online reviews. 
+                <a href = "https://drive.google.com/file/d/1rOpuynns9hyMAy_TOnJWqk_jyFba7R5N/view?usp=sharing">[Writeup]</a>
+                <a href="https://github.com/yqian000/OnlineReviewDetection">[Slides]</a>  
+                <a href="https://drive.google.com/file/d/1UoQgzS9XEv7ByoPny_bdsxmMS5FpbsPd/view?usp=sharing">[Code/Models]</a> 
+            </p>
+            <p>Joint work with Yue (Kathy) Qian and Chuantian Lin</p>
+            <br>
+        </div>
+        
+        <div class = "project3"> 
+            <img src ="Images/math1.PNG" ALIGN = "left" HSPACE = "30" WIDTH = "145" HEIGHT = auto/>
+            
+            <p >
+                <b>Average Size of Randomly-Generated Dominating Sets</b> <br> <br>
+                An experimental approach to studying randomly-generated dominating sets using numerical simulations,
+                probability, Markov chain, and number theory. <a href="https://drive.google.com/file/d/1iP3ML4TP8Myl3iI6KhK1hXEdVAVibsc9/view?usp=sharing">[Slides]</a>
+            </p>
+            <p>Advisor : Michael Wijaya, Ph.D.</p>
+            <br>
+        </div>
+
+      <hr> 
+
+
+
+      <p>Something random about me :</p>
+      <button onclick="addRandomGreeting()">Random</button>
       <div id="greeting-container"></div>
+
+
+        <!-- ================================================= -->
+        <!--Div that will hold the pie chart-->
+        <div id="chart_div", ALIGN = "CENTER"></div>
+        <br> 
+        <!-- ================================================= -->
+<!--
+      <p>Please click here to get date :</p>
+      <button onclick="showServerTime()">Random</button>
+      <div id="datetime"></div>
+-->
+<!--
+      <form method="POST">
+        <p>Enter some text here:</p>
+        <textarea name="text-input">hello world</textarea>
+        <br/>
+        <input type="submit" />
+      </form>
+    -->
+      
+      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
+
+    <!--
+      <button onclick="showServerTime();">
+        Get date
+      </button>
+      <p id="date-container"></p>
+    -->
     </div>
   </body>
 </html>
